@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA MOTORS - Showroom Ô Tô Sang Trọng & Đẳng Cấp</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldHover: '#AA820A',
+                            red: '#E50914',
+                            dark: '#0B0C10',
+                            card: '#12141C',
+                            border: '#232733',
+                            accent: '#C5A059'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0C10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232733;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        .hero-bg {
+            background: linear-gradient(to right, rgba(11, 12, 16, 0.95), rgba(11, 12, 16, 0.5)), url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+        }
+        .glass-panel {
+            background: rgba(18, 20, 28, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FFF 30%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-gradient-btn:hover {
+            background: linear-gradient(135deg, #E6C250 0%, #C5A059 100%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-black">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-panel border-b border-brand-border/50" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" onclick="showPage('home')" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-brand-gold to-yellow-200 flex items-center justify-center text-black font-bold text-xl shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-black">A</i>
+                    </div>
+                    <span class="font-serif text-2xl font-bold tracking-widest text-white group-hover:text-brand-gold transition-colors">AURA<span class="text-brand-gold">MOTORS</span></span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <button onclick="showPage('home')" id="nav-home" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-all text-brand-gold bg-brand-gold/10">Trang Chủ</button>
+                    <button onclick="showPage('showroom')" id="nav-showroom" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Mẫu Xe</button>
+                    <button onclick="showPage('services')" id="nav-services" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Dịch Vụ</button>
+                    <button onclick="showPage('about')" id="nav-about" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Về Chúng Tôi</button>
+                    <button onclick="showPage('contact')" id="nav-contact" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Liên Hệ</button>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:1900888999" class="text-sm font-semibold text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-brand-gold"></i> 1900 888 999
+                    </a>
+                    <button onclick="openTestDriveModal()" class="gold-gradient-btn px-5 py-2.5 rounded-full text-black font-semibold text-sm shadow-md flex items-center gap-2">
+                        <i class="fa-solid fa-steering-wheel"></i> Lái Thử Ngay
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white p-2 text-xl focus:outline-none">
+                        <i class="fa-solid fa-bars" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-brand-border px-4 pt-2 pb-6 space-y-2">
+            <button onclick="showPage('home')" class="mobile-nav-btn block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-brand-gold bg-brand-gold/10">Trang Chủ</button>
+            <button onclick="showPage('showroom')" class="mobile-nav-btn block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-white/5">Mẫu Xe</button>
+            <button onclick="showPage('services')" class="mobile-nav-btn block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-white/5">Dịch Vụ</button>
+            <button onclick="showPage('about')" class="mobile-nav-btn block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-white/5">Về Chúng Tôi</button>
+            <button onclick="showPage('contact')" class="mobile-nav-btn block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-white/5">Liên Hệ & Đặt Lịch</button>
+            <div class="pt-4 border-t border-brand-border flex flex-col gap-3">
+                <a href="tel:1900888999" class="text-center py-2 text-brand-gold font-semibold">
+                    <i class="fa-solid fa-phone"></i> Hotline: 1900 888 999
+                </a>
+                <button onclick="openTestDriveModal()" class="w-full gold-gradient-btn py-3 rounded-xl text-black font-bold text-center">
+                    Đăng Ký Lái Thử
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE CONTAINER (All 5 Pages Dynamic Toggle) -->
+    <main class="pt-20">
+
+        <!-- ================= PAGE 1: HOME ================= -->
+        <section id="page-home" class="page-section">
+            <!-- Hero Banner -->
+            <div class="hero-bg min-h-[90vh] flex items-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 w-full">
+                    <div class="max-w-3xl space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-crown"></i> Thương Hiệu Ô Tô Hàng Đầu
+                        </div>
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-extrabold text-white leading-tight">
+                            Khai Phá <span class="text-gradient">Đẳng Cấp</span> Thượng Lưu
+                        </h1>
+                        <p class="text-lg sm:text-xl text-gray-300 font-light leading-relaxed">
+                            Trải nghiệm những kiệt tác siêu xe và xe sang độc quyền. Sứ mệnh của AURA MOTORS là mang tới đỉnh cao phong cách và sự hoàn hảo trên từng hành trình.
+                        </p>
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <button onclick="showPage('showroom')" class="gold-gradient-btn px-8 py-4 rounded-xl text-black font-bold text-base flex items-center gap-3 hover:scale-105 transition-transform">
+                                Kham Phá Mẫu Xe <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <button onclick="showPage('contact')" class="px-8 py-4 rounded-xl border border-gray-600 hover:border-brand-gold bg-black/40 text-white font-semibold text-base transition-all hover:bg-brand-gold/10">
+                                Đặt Lịch Lái Thử
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Stats -->
+                <div class="absolute bottom-6 right-6 lg:right-12 hidden md:flex items-center gap-8 glass-panel p-6 rounded-2xl border border-brand-border">
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-brand-gold">150+</p>
+                        <p class="text-xs text-gray-400">Siêu Xe Có Sẵn</p>
+                    </div>
+                    <div class="w-px h-8 bg-brand-border"></div>
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-brand-gold">100%</p>
+                        <p class="text-xs text-gray-400">Chính Hãng</p>
+                    </div>
+                    <div class="w-px h-8 bg-brand-border"></div>
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-brand-gold">2,500+</p>
+                        <p class="text-xs text-gray-400">Khách Hàng Thượng Lưu</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Highlights -->
+            <div class="py-20 bg-brand-dark relative border-b border-brand-border/40">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="glass-panel p-8 rounded-2xl hover:border-brand-gold/50 transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Sản Phẩm Chính Hãng</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Cam kết 100% xe nhập khẩu chính hãng với đầy đủ chứng nhận xuất xứ, giấy tờ hoàn chỉnh và quy trình kiểm định nghiêm ngặt.</p>
+                        </div>
+                        <div class="glass-panel p-8 rounded-2xl hover:border-brand-gold/50 transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Bảo Hành Độc Quyền</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Gói bảo hành vàng lên tới 5 năm cùng đặc quyền hỗ trợ cứu hộ khẩn cấp 24/7 trên toàn quốc cho tất cả dòng xe hạng sang.</p>
+                        </div>
+                        <div class="glass-panel p-8 rounded-2xl hover:border-brand-gold/50 transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Tài Chính Ưu Đãi</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Giải pháp tài chính linh hoạt, hỗ trợ vay mua trả góp lãi suất đặc quyền tới 80% giá trị xe với thủ tục xét duyệt nhanh chóng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Cars (Hot Models Section) -->
+            <div class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <span class="text-brand-gold text-sm font-semibold tracking-widest uppercase">Bộ Sưu Tập Nổi Bật</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">Mẫu Xe Hot Nhất Năm</h2>
+                    </div>
+                    <button onclick="showPage('showroom')" class="text-brand-gold hover:text-white font-semibold text-sm flex items-center gap-2 group">
+                        Xem Tất Cả Xe <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="featured-cars-container">
+                    <!-- Featured cars dynamically inserted via JS -->
+                </div>
+            </div>
+
+            <!-- CTA Callout Banner -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-16">
+                <div class="glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden bg-gradient-to-r from-brand-card via-black to-brand-card border border-brand-gold/30">
+                    <div class="relative z-10 max-w-2xl">
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">Sẵn Sàng Cho Trải Nghiệm Lái Thử Đỉnh Cao?</h2>
+                        <p class="text-gray-300 mb-8">Hãy đăng ký ngay hôm nay để trực tiếp cầm lái siêu xe mơ ước của bạn tại Showroom Aura Motors.</p>
+                        <button onclick="openTestDriveModal()" class="gold-gradient-btn px-8 py-4 rounded-xl text-black font-bold text-base shadow-lg">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Đặt Lịch Lái Thử Mới
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: SHOWROOM / MODELS ================= -->
+        <section id="page-showroom" class="page-section hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Page Title -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-gold text-sm font-semibold tracking-widest uppercase">Danh Mục Sản Phẩm</span>
+                    <h1 class="text-4xl sm:text-5xl font-serif font-bold text-white mt-2 mb-4">Bộ Sưu Tập Siêu Xe</h1>
+                    <p class="text-gray-400">Khám phá các dòng xe Sedan, SUV, Xe Thể Thao và Xe Điện hạng sang đỉnh cao nhất thế giới.</p>
+                </div>
+
+                <!-- Filter Controls Panel -->
+                <div class="glass-panel p-6 rounded-2xl mb-10 border border-brand-border">
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center">
+                        <!-- Search Box -->
+                        <div class="relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" id="search-input" onkeyup="filterCars()" placeholder="Tìm tên xe, hãng..." 
+                                class="w-full bg-black/50 border border-brand-border rounded-xl pl-11 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold">
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div>
+                            <select id="category-select" onchange="filterCars()" class="w-full bg-black/50 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                <option value="all">Tất cả kiểu dáng</option>
+                                <option value="Sedan">Sedan Sang Trọng</option>
+                                <option value="SUV">SUV Đa Dụng</option>
+                                <option value="Sport">Xe Thể Thao / Supercar</option>
+                                <option value="Electric">Xe Điện Siêu Cấp</option>
+                            </select>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div>
+                            <select id="price-select" onchange="filterCars()" class="w-full bg-black/50 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                <option value="all">Tất cả khoảng giá</option>
+                                <option value="under-5b">Dưới 5 Tỷ VNĐ</option>
+                                <option value="5b-10b">Từ 5 - 10 Tỷ VNĐ</option>
+                                <option value="over-10b">Trên 10 Tỷ VNĐ</option>
+                            </select>
+                        </div>
+
+                        <!-- Reset Filter -->
+                        <div>
+                            <button onclick="resetFilters()" class="w-full border border-gray-700 hover:border-brand-gold text-gray-300 hover:text-white py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-rotate-left"></i> Đặt Lại Bộ Lọc
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cars List Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="showroom-cars-container">
+                    <!-- Dynamic Cars Output -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="no-cars-found" class="hidden text-center py-16">
+                    <i class="fa-solid fa-car-tunnel text-6xl text-gray-600 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-2">Không Tìm Thấy Mẫu Xe Phù Hợp</h3>
+                    <p class="text-gray-400 mb-6">Vui lòng thay đổi từ khóa tìm kiếm hoặc điều chỉnh bộ lọc.</p>
+                    <button onclick="resetFilters()" class="gold-gradient-btn px-6 py-3 rounded-xl text-black font-semibold">
+                        Xóa Bộ Lọc
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: SERVICES & FINANCIAL ================= -->
+        <section id="page-services" class="page-section hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Page Title -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-gold text-sm font-semibold tracking-widest uppercase">Đặc Quyền Khách Hàng</span>
+                    <h1 class="text-4xl sm:text-5xl font-serif font-bold text-white mt-2 mb-4">Dịch Vụ & Giải Pháp Tài Chính</h1>
+                    <p class="text-gray-400">Trải nghiệm dịch vụ hậu mãi tiêu chuẩn 5 sao và công cụ hỗ trợ tính toán tài chính mua xe trả góp.</p>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                    <div class="glass-panel p-6 rounded-2xl text-center border border-brand-border hover:border-brand-gold/50 transition-all">
+                        <div class="w-16 h-16 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-3xl mx-auto mb-4">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Bảo Dưỡng Định Kỳ</h3>
+                        <p class="text-gray-400 text-sm">Trang thiết bị chẩn đoán hiện đại đạt chuẩn nhà sản xuất cùng kĩ thuật viên chứng chỉ quốc tế.</p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl text-center border border-brand-border hover:border-brand-gold/50 transition-all">
+                        <div class="w-16 h-16 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-3xl mx-auto mb-4">
+                            <i class="fa-solid fa-sparkles"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Chăm Sóc Xe Detailing</h3>
+                        <p class="text-gray-400 text-sm">Dịch vụ dán phim cách nhiệt, phủ ceramic bảo vệ sơn cao cấp và chăm sóc nội thất xa xỉ.</p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl text-center border border-brand-border hover:border-brand-gold/50 transition-all">
+                        <div class="w-16 h-16 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-3xl mx-auto mb-4">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Bảo Hiểm Tối Ưu</h3>
+                        <p class="text-gray-400 text-sm">Hợp tác cùng các đơn vị bảo hiểm hàng đầu, giải quyết bồi thường chuyên nghiệp và nhanh chóng.</p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl text-center border border-brand-border hover:border-brand-gold/50 transition-all">
+                        <div class="w-16 h-16 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-3xl mx-auto mb-4">
+                            <i class="fa-solid fa-truck-pickup"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cứu Hộ VIP 24/7</h3>
+                        <p class="text-gray-400 text-sm">Đội cứu hộ chuyên dụng sẵn sàng phục vụ quý khách 24/7 trên mọi hành trình toàn quốc.</p>
+                    </div>
+                </div>
+
+                <!-- Loan Calculator Section -->
+                <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-brand-gold/30">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-5 space-y-6">
+                            <span class="text-brand-gold text-xs font-semibold uppercase tracking-widest">Dự Toán Tài Chính</span>
+                            <h2 class="text-3xl font-serif font-bold text-white">Bảng Tính Trả Góp Mua Xe</h2>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Lên kế hoạch sở hữu chiếc xe yêu thích thật dễ dàng. Hãy điều chỉnh các thông số để ước tính chi phí trả góp hàng tháng.
+                            </p>
+                            <div class="p-4 bg-black/40 rounded-xl border border-brand-border space-y-2">
+                                <p class="text-xs text-gray-400"><i class="fa-solid fa-circle-info text-brand-gold mr-1"></i> Ưu đãi lãi suất vay cố định từ <strong>7.5%/năm</strong> từ ngân hàng đối tác.</p>
+                                <p class="text-xs text-gray-400"><i class="fa-solid fa-circle-check text-brand-gold mr-1"></i> Hỗ trợ hạn mức vay lên đến <strong>80% giá trị xe</strong>.</p>
+                            </div>
+                        </div>
+
+                        <!-- Loan Form inputs -->
+                        <div class="lg:col-span-7 bg-black/60 p-6 sm:p-8 rounded-2xl border border-brand-border space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Giá Trị Xe (VNĐ)</label>
+                                <input type="number" id="calc-car-price" value="6500000000" step="100000000" oninput="calculateLoan()" 
+                                    class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3 text-brand-gold font-bold focus:outline-none focus:border-brand-gold">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Trả Trước (%)</label>
+                                    <select id="calc-downpayment-pct" onchange="calculateLoan()" class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                        <option value="20">20% Giá trị xe</option>
+                                        <option value="30" selected>30% Giá trị xe</option>
+                                        <option value="50">50% Giá trị xe</option>
+                                        <option value="70">70% Giá trị xe</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Thời Han Vay (Năm)</label>
+                                    <select id="calc-years" onchange="calculateLoan()" class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                        <option value="3">3 Năm (36 Tháng)</option>
+                                        <option value="5" selected>5 Năm (60 Tháng)</option>
+                                        <option value="7">7 Năm (84 Tháng)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Calculation Results -->
+                            <div class="pt-6 border-t border-brand-border/60 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-brand-card p-4 rounded-xl border border-brand-border">
+                                    <p class="text-xs text-gray-400">Số Tiền Trả Trước:</p>
+                                    <p class="text-lg font-bold text-white mt-1" id="res-downpayment">1,950,000,000 VNĐ</p>
+                                </div>
+                                <div class="bg-brand-card p-4 rounded-xl border border-brand-gold/40">
+                                    <p class="text-xs text-gray-400">Gốc + Lãi Trả Hàng Tháng (Tạm tính):</p>
+                                    <p class="text-xl font-extrabold text-brand-gold mt-1" id="res-monthly">104,500,000 VNĐ</p>
+                                </div>
+                            </div>
+
+                            <button onclick="openTestDriveModal('Tư Vấn Tài Chính & Mua Trả Góp')" class="w-full gold-gradient-btn py-3.5 rounded-xl text-black font-bold text-center">
+                                Đăng Ký Tư Vấn Gói Vay Ngay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: ABOUT US ================= -->
+        <section id="page-about" class="page-section hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Banner / Intro -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                    <div class="space-y-6">
+                        <span class="text-brand-gold text-sm font-semibold tracking-widest uppercase">Hành Trình Đẳng Cấp</span>
+                        <h1 class="text-4xl sm:text-5xl font-serif font-bold text-white leading-tight">Khẳng Định Mẫu Mực Hạng Sang Tại Việt Nam</h1>
+                        <p class="text-gray-300 leading-relaxed">
+                            Được thành lập từ năm 2012, **AURA MOTORS** tự hào là đơn vị tiên phong nhập khẩu và phân phối các dòng ô tô siêu sang hàng đầu thế giới như Rolls-Royce, Bentley, Ferrari, Porsche và Mercedes-Maybach.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed">
+                            Chúng tôi tôn vinh sự tinh tế và trải nghiệm độc bản. Mỗi chiếc xe bàn giao tới tay chủ nhân là một tác phẩm nghệ thuật đại diện cho thành công và vị thế tôn quý.
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-brand-border">
+                            <div>
+                                <p class="text-3xl font-bold text-brand-gold font-serif">14+</p>
+                                <p class="text-xs text-gray-400 mt-1">Năm Kinh Nghiệm</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-brand-gold font-serif">3</p>
+                                <p class="text-xs text-gray-400 mt-1">Showroom Toàn Quốc</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-brand-gold font-serif">99%</p>
+                                <p class="text-xs text-gray-400 mt-1">Hài Lòng Tuyệt Đối</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-gold to-yellow-600 blur opacity-30"></div>
+                        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80" alt="Showroom Aura Motors" class="relative rounded-3xl w-full object-cover shadow-2xl h-[450px]">
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="mb-20">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-brand-gold text-sm font-semibold uppercase tracking-widest">Đội Ngũ Chuyên Gia</span>
+                        <h2 class="text-3xl font-serif font-bold text-white mt-2">Ban Quản Lý & Cố Vấn Ca Cấp</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-panel p-6 rounded-2xl text-center border border-brand-border group">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="CEO" class="w-32 h-32 rounded-full mx-auto object-cover mb-4 border-2 border-brand-gold group-hover:scale-105 transition-transform">
+                            <h3 class="text-xl font-bold text-white">Ông Nguyễn Hoàng Nam</h3>
+                            <p class="text-brand-gold text-sm mb-3">Tổng Giám Đốc Điều Hành (CEO)</p>
+                            <p class="text-gray-400 text-xs">Hơn 18 năm kinh nghiệm quản trị thương hiệu xa xỉ toàn cầu.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-2xl text-center border border-brand-border group">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Sales Director" class="w-32 h-32 rounded-full mx-auto object-cover mb-4 border-2 border-brand-gold group-hover:scale-105 transition-transform">
+                            <h3 class="text-xl font-bold text-white">Bà Trần Lê Phương Thảo</h3>
+                            <p class="text-brand-gold text-sm mb-3">Giám Đốc Kinh Doanh</p>
+                            <p class="text-gray-400 text-xs">Chuyên gia tư vấn cá nhân hóa trải nghiệm xe cho tệp khách hàng VIP.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-2xl text-center border border-brand-border group">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Technical Director" class="w-32 h-32 rounded-full mx-auto object-cover mb-4 border-2 border-brand-gold group-hover:scale-105 transition-transform">
+                            <h3 class="text-xl font-bold text-white">Ông Phạm Quốc Hùng</h3>
+                            <p class="text-brand-gold text-sm mb-3">Giám Đốc Kỹ Thuật & Dịch Vụ</p>
+                            <p class="text-gray-400 text-xs">Chứng chỉ Kỹ sư cao cấp chứng nhận từ Stuttgart, Đức.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-brand-border">
+                    <div class="text-center max-w-2xl mx-auto mb-10">
+                        <span class="text-brand-gold text-sm font-semibold uppercase tracking-widest">Đánh Giá Từ Khách Hàng</span>
+                        <h2 class="text-3xl font-serif font-bold text-white mt-1">Cảm Nhận Về Aura Motors</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-black/40 p-6 rounded-2xl border border-brand-border relative">
+                            <div class="text-brand-gold mb-3 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-300 italic text-sm mb-4">"Tôi hoàn toàn ấn tượng với phong cách phục vụ tận tâm của Aura Motors. Việc bàn giao chiếc Porsche Taycan của tôi diễn ra hoàn hảo ngoài mong đợi!"</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-brand-gold">
+                                    D
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold text-sm">Anh Doãn Minh Quân</p>
+                                    <p class="text-gray-500 text-xs">Doanh Nhân - Hà Nội</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-black/40 p-6 rounded-2xl border border-brand-border relative">
+                            <div class="text-brand-gold mb-3 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-300 italic text-sm mb-4">"Dịch vụ bảo dưỡng và hậu mãi ở đây rất chuẩn mực. Các cố vấn luôn lắng nghe và đưa ra phương án tối ưu nhất cho dàn xe của doanh nghiệp chúng tôi."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-brand-gold">
+                                    L
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold text-sm">Chị Lê Thu Trang</p>
+                                    <p class="text-gray-500 text-xs">Chủ Tịch Tập Đoàn BĐS - TP.HCM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 5: CONTACT & BOOK TEST DRIVE ================= -->
+        <section id="page-contact" class="page-section hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Page Title -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-gold text-sm font-semibold tracking-widest uppercase">Trải Nghiệm Trực Tiếp</span>
+                    <h1 class="text-4xl sm:text-5xl font-serif font-bold text-white mt-2 mb-4">Liên Hệ & Đặt Lịch Lái Thử</h1>
+                    <p class="text-gray-400">Điền thông tin đặt hẹn lái thử hoặc liên hệ trực tiếp với bộ phận chăm sóc khách hàng Aura Motors.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-7 glass-panel p-8 rounded-3xl border border-brand-border">
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-file-pen text-brand-gold"></i> Đăng Ký Lịch Lái Thử XE
+                        </h2>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Họ & Tên Quý Khách *</label>
+                                    <input type="text" required placeholder="Nguyễn Văn A" class="w-full bg-black/50 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Số Điện Thoại *</label>
+                                    <input type="tel" required placeholder="0901 234 567" class="w-full bg-black/50 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Email Lĩnh Vực</label>
+                                    <input type="email" placeholder="example@email.com" class="w-full bg-black/50 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Mẫu Xe Muốn Lái Thử *</label>
+                                    <select id="form-car-select" required class="w-full bg-black/50 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                        <option value="">-- Chọn Mẫu Xe --</option>
+                                        <option value="Porsche Taycan Turbo S">Porsche Taycan Turbo S</option>
+                                        <option value="Mercedes-Maybach S 680">Mercedes-Maybach S 680</option>
+                                        <option value="Lamborghini Urus Performante">Lamborghini Urus Performante</option>
+                                        <option value="Rolls-Royce Ghost Series II">Rolls-Royce Ghost Series II</option>
+                                        <option value="Ferrari 296 GTB">Ferrari 296 GTB</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Ngày Dự Kiến *</label>
+                                    <input type="date" required class="w-full bg-black/50 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Địa Điểm Lái Thử</label>
+                                    <select class="w-full bg-black/50 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                                        <option value="hanoi">Showroom Hà Nội (Nam Từ Liêm)</option>
+                                        <option value="hcm">Showroom TP.HCM (Quận 7)</option>
+                                        <option value="home">Tận Nơi Tốt Nhất Cho Khách Hàng</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Yêu Cầu Đặc Bằng Hoặc Ghi Chú</label>
+                                <textarea rows="3" placeholder="Nhập thêm yêu cầu cá nhân hóa..." class="w-full bg-black/50 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full gold-gradient-btn py-4 rounded-xl text-black font-bold text-base shadow-lg">
+                                Xác Nhận Đăng Ký Lái Thử
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Showroom Information & Map -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-panel p-8 rounded-3xl border border-brand-border space-y-6">
+                            <h3 class="text-2xl font-bold text-white font-serif">Thông Tin Showroom</h3>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white">Địa Chỉ Flagship Showroom</p>
+                                        <p class="text-xs text-gray-400 mt-0.5">Số 88 Đại Lộ Thăng Long, Q. Nam Từ Liêm, Hà Nội</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white">Hotline Tư Vấn 24/7</p>
+                                        <p class="text-xs text-brand-gold font-semibold mt-0.5">1900 888 999 - 0988 999 888</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white">Thời Gian Mở Cửa</p>
+                                        <p class="text-xs text-gray-400 mt-0.5">Thứ 2 - Chủ Nhật: 08:00 - 20:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Embedded Map Box -->
+                        <div class="glass-panel p-2 rounded-3xl border border-brand-border h-64 overflow-hidden">
+                            <iframe class="w-full h-full rounded-2xl grayscale contrast-125 opacity-80 hover:opacity-100 transition-opacity" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.588820061389!2d105.7762!3d21.009!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAwJzMyLjQiTiAxMDXCsDQ2JzM0LjMiRQ!5e0!3m2!1svi!2s!4v1620000000000" 
+                                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-black border-t border-brand-border/60 pt-16 pb-8 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <a href="#" onclick="showPage('home')" class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded bg-brand-gold flex items-center justify-center text-black font-bold text-lg">A</div>
+                        <span class="font-serif text-xl font-bold tracking-widest text-white">AURA<span class="text-brand-gold">MOTORS</span></span>
+                    </a>
+                    <p class="text-xs leading-relaxed text-gray-500">
+                        Thương hiệu nhập khẩu và phân phối ô tô siêu sang hàng đầu Việt Nam. Tinh hoa đẳng cấp và sự hài lòng trọn vẹn của khách hàng.
+                    </p>
+                    <div class="flex space-x-3 text-lg text-gray-400">
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-card flex items-center justify-center hover:text-brand-gold hover:border-brand-gold border border-brand-border"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-card flex items-center justify-center hover:text-brand-gold hover:border-brand-gold border border-brand-border"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-card flex items-center justify-center hover:text-brand-gold hover:border-brand-gold border border-brand-border"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Liên Kết Nhanh</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" onclick="showPage('home')" class="hover:text-brand-gold transition-colors">Trang Chủ</a></li>
+                        <li><a href="#" onclick="showPage('showroom')" class="hover:text-brand-gold transition-colors">Bộ Sưu Tập Xe</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-brand-gold transition-colors">Dịch Vụ & Bảo Hành</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-brand-gold transition-colors">Bảng Tính Trả Góp</a></li>
+                        <li><a href="#" onclick="showPage('about')" class="hover:text-brand-gold transition-colors">Về Aura Motors</a></li>
+                    </ul>
+                </div>
+
+                <!-- Car Brands -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Thương Hiệu xe</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" onclick="showPage('showroom')" class="hover:text-brand-gold transition-colors">Rolls-Royce Motor Cars</a></li>
+                        <li><a href="#" onclick="showPage('showroom')" class="hover:text-brand-gold transition-colors">Porsche Performance</a></li>
+                        <li><a href="#" onclick="showPage('showroom')" class="hover:text-brand-gold transition-colors">Mercedes-Maybach</a></li>
+                        <li><a href="#" onclick="showPage('showroom')" class="hover:text-brand-gold transition-colors">Ferrari Supercars</a></li>
+                        <li><a href="#" onclick="showPage('showroom')" class="hover:text-brand-gold transition-colors">Lamborghini Automobili</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Đăng Ký Nhận Tin</h4>
+                    <p class="text-xs text-gray-500 mb-3">Nhận thông báo sớm nhất về các mẫu siêu xe phiên bản giới hạn mới về showroom.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Email của bạn..." class="bg-brand-card border border-brand-border rounded-lg px-3 py-2 text-xs text-white w-full focus:outline-none focus:border-brand-gold">
+                        <button onclick="alert('Cảm ơn quý khách đã đăng ký nhận bản tin!')" class="gold-gradient-btn px-4 py-2 rounded-lg text-black text-xs font-bold shrink-0">
+                            Gửi
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-brand-border/40 text-center text-xs text-gray-600">
+                <p>&copy; 2026 AURA MOTORS. Tất cả các quyền được bảo lưu. Thiết kế sang trọng bởi AI Developer.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CAR DETAIL & TEST DRIVE MODAL -->
+    <div id="car-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-panel max-w-2xl w-full rounded-3xl border border-brand-gold/40 p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCarModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-black/60 text-gray-400 hover:text-white flex items-center justify-center text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="modal-content">
+                <!-- Content generated via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS NOTIFICATION TOAST -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 hidden glass-panel border border-brand-gold text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-4">
+        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xl">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div>
+            <h4 class="font-bold text-sm text-white" id="toast-title">Thành Công!</h4>
+            <p class="text-xs text-gray-300" id="toast-message">Yêu cầu của quý khách đã được ghi nhận.</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        /* Database list of Cars */
+        const CARS_DATA = [
+            {
+                id: 1,
+                name: "Porsche Taycan Turbo S",
+                brand: "Porsche",
+                type: "Electric",
+                price: "9,500,000,000 VNĐ",
+                priceVal: 9500000000,
+                engine: "Động Cơ Điện Kép AWD",
+                power: "761 Mã Lực",
+                speed: "260 km/h (0-100km/h: 2.8s)",
+                image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80",
+                featured: true,
+                desc: "Siêu xe thuần điện đỉnh cao từ Stuttgart với khả năng tăng tốc chóng mặt và công nghệ sạc nhanh 800V tiên tiến."
+            },
+            {
+                id: 2,
+                name: "Mercedes-Maybach S 680",
+                brand: "Mercedes",
+                type: "Sedan",
+                price: "15,990,000,000 VNĐ",
+                priceVal: 15990000000,
+                engine: "6.0L V12 Biturbo",
+                power: "612 Mã Lực",
+                speed: "250 km/h",
+                image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80",
+                featured: true,
+                desc: "Biểu tượng đỉnh cao của sự sang trọng quý tộc. Khoang thương gia phía sau với ghế massage đá nóng và ly Champagne bạc."
+            },
+            {
+                id: 3,
+                name: "Lamborghini Urus Performante",
+                brand: "Lamborghini",
+                type: "SUV",
+                price: "16,500,000,000 VNĐ",
+                priceVal: 16500000000,
+                engine: "4.0L V8 Twin-Turbo",
+                power: "666 Mã Lực",
+                speed: "306 km/h (0-100km/h: 3.3s)",
+                image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80",
+                featured: true,
+                desc: "Siêu SUV thể thao tối thượng mang DNA đường đua Ý. Sức mạnh vượt trội kết hợp thiết kế góc cạnh đầy kiêu hãnh."
+            },
+            {
+                id: 4,
+                name: "Rolls-Royce Ghost Series II",
+                brand: "Rolls-Royce",
+                type: "Sedan",
+                price: "31,000,000,000 VNĐ",
+                priceVal: 31000000000,
+                engine: "6.75L V12 Twin-Turbo",
+                power: "563 Mã Lực",
+                speed: "250 km/h",
+                image: "https://images.unsplash.com/photo-1631295868223-63265b40d9e4?auto=format&fit=crop&w=800&q=80",
+                featured: false,
+                desc: "Kiệt tác tĩnh lặng đích thực. Hệ thống treo Magic Carpet Ride đem lại trải nghiệm lướt đi trên thảm thần kỳ."
+            },
+            {
+                id: 5,
+                name: "Ferrari 296 GTB",
+                brand: "Ferrari",
+                type: "Sport",
+                price: "21,000,000,000 VNĐ",
+                priceVal: 21000000000,
+                engine: "3.0L V6 PHEV Hybrid",
+                power: "830 Mã Lực",
+                speed: "330 km/h (0-100km/h: 2.9s)",
+                image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
+                featured: false,
+                desc: "Kỷ nguyên mới của siêu xe hybrid Maranello. Âm thanh động cơ V6 đặc trưng cùng hiệu năng lái phấn khích bậc nhất."
+            },
+            {
+                id: 6,
+                name: "Range Rover SV Autobiography",
+                brand: "Land Rover",
+                type: "SUV",
+                price: "12,800,000,000 VNĐ",
+                priceVal: 12800000000,
+                engine: "4.4L V8 Twin-Turbo",
+                power: "530 Mã Lực",
+                speed: "261 km/h",
+                image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80",
+                featured: false,
+                desc: "Đỉnh cao SUV quý tộc Anh Quốc. Nội thất da Semi-Aniline cá nhân hóa tỉ mỉ đến từng chi tiết thủ công."
+            }
+        ];
+
+        /* Page Navigation Control */
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('hidden'));
+            
+            // Show target page
+            const target = document.getElementById(`page-${pageId}`);
+            if (target) {
+                target.classList.remove('hidden');
+            }
+
+            // Update Header Nav Links Style
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-brand-gold', 'bg-brand-gold/10');
+                btn.classList.add('text-gray-300');
+            });
+            const activeNav = document.getElementById(`nav-${pageId}`);
+            if (activeNav) {
+                activeNav.classList.add('text-brand-gold', 'bg-brand-gold/10');
+                activeNav.classList.remove('text-gray-300');
+            }
+
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* Mobile Menu Toggle */
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        /* Render Cars Helper Card HTML */
+        function createCarCardHTML(car) {
+            return `
+                <div class="glass-panel rounded-2xl overflow-hidden border border-brand-border hover:border-brand-gold/50 transition-all duration-300 flex flex-col group">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="${car.image}" alt="${car.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-brand-border text-xs text-brand-gold font-semibold uppercase">
+                            ${car.type}
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">${car.brand}</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-0.5">${car.name}</h3>
+                            <p class="text-lg font-extrabold text-brand-gold mt-2">${car.price}</p>
+                        </div>
+
+                        <!-- Mini Specs -->
+                        <div class="grid grid-cols-2 gap-2 text-xs text-gray-300 py-3 border-y border-brand-border/60">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-gauge-high text-brand-gold"></i>
+                                <span>${car.power}</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-brand-gold"></i>
+                                <span>${car.speed}</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 pt-1">
+                            <button onclick="openCarDetailModal(${car.id})" class="px-4 py-2.5 rounded-xl border border-gray-700 hover:border-brand-gold text-white text-xs font-semibold transition-colors">
+                                Chi Tiết Xe
+                            </button>
+                            <button onclick="openTestDriveForCar('${car.name}')" class="gold-gradient-btn px-4 py-2.5 rounded-xl text-black text-xs font-bold text-center">
+                                Lái Thử
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        /* Populate Home & Showroom Cars */
+        function renderCars() {
+            // Home page featured cars
+            const featuredContainer = document.getElementById('featured-cars-container');
+            if (featuredContainer) {
+                const featuredCars = CARS_DATA.filter(c => c.featured);
+                featuredContainer.innerHTML = featuredCars.map(car => createCarCardHTML(car)).join('');
+            }
+
+            // Showroom full list
+            filterCars();
+        }
+
+        /* Filter Functionality for Showroom */
+        function filterCars() {
+            const showroomContainer = document.getElementById('showroom-cars-container');
+            if (!showroomContainer) return;
+
+            const searchVal = document.getElementById('search-input').value.toLowerCase();
+            const catVal = document.getElementById('category-select').value;
+            const priceVal = document.getElementById('price-select').value;
+
+            const filtered = CARS_DATA.filter(car => {
+                // Search match
+                const matchSearch = car.name.toLowerCase().includes(searchVal) || car.brand.toLowerCase().includes(searchVal);
+                
+                // Category match
+                const matchCat = (catVal === 'all') || (car.type === catVal);
+
+                // Price match
+                let matchPrice = true;
+                if (priceVal === 'under-5b') matchPrice = car.priceVal < 5000000000;
+                else if (priceVal === '5b-10b') matchPrice = car.priceVal >= 5000000000 && car.priceVal <= 10000000000;
+                else if (priceVal === 'over-10b') matchPrice = car.priceVal > 10000000000;
+
+                return matchSearch && matchCat && matchPrice;
+            });
+
+            const noCarsEl = document.getElementById('no-cars-found');
+            if (filtered.length === 0) {
+                showroomContainer.innerHTML = '';
+                noCarsEl.classList.remove('hidden');
+            } else {
+                noCarsEl.classList.add('hidden');
+                showroomContainer.innerHTML = filtered.map(car => createCarCardHTML(car)).join('');
+            }
+        }
+
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('category-select').value = 'all';
+            document.getElementById('price-select').value = 'all';
+            filterCars();
+        }
+
+        /* Modal Details & Test Drive */
+        function openCarDetailModal(carId) {
+            const car = CARS_DATA.find(c => c.id === carId);
+            if (!car) return;
+
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <div class="space-y-6">
+                    <img src="${car.image}" alt="${car.name}" class="w-full h-64 object-cover rounded-2xl border border-brand-border">
+                    <div>
+                        <span class="text-xs text-brand-gold uppercase tracking-widest font-bold">${car.brand} • ${car.type}</span>
+                        <h2 class="text-3xl font-serif font-bold text-white mt-1">${car.name}</h2>
+                        <p class="text-2xl font-extrabold text-brand-gold mt-2">${car.price}</p>
+                    </div>
+
+                    <p class="text-gray-300 text-sm leading-relaxed">${car.desc}</p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 bg-black/40 p-4 rounded-xl border border-brand-border text-xs">
+                        <div>
+                            <p class="text-gray-500">Động Cơ</p>
+                            <p class="font-bold text-white mt-0.5">${car.engine}</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500">Công Suất</p>
+                            <p class="font-bold text-white mt-0.5">${car.power}</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500">Tốc Độ Tối Đa</p>
+                            <p class="font-bold text-white mt-0.5">${car.speed}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pt-2">
+                        <button onclick="closeCarModal(); openTestDriveForCar('${car.name}')" class="w-full gold-gradient-btn py-3.5 rounded-xl text-black font-bold text-center">
+                            Đăng Ký Lái Thử Mẫu Xe Này
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('car-modal').classList.remove('hidden');
+        }
+
+        function closeCarModal() {
+            document.getElementById('car-modal').classList.add('hidden');
+        }
+
+        function openTestDriveModal(carName = '') {
+            showPage('contact');
+            if (carName) {
+                const select = document.getElementById('form-car-select');
+                if (select) {
+                    // find or set option
+                    select.value = carName;
+                }
+            }
+        }
+
+        function openTestDriveForCar(carName) {
+            openTestDriveModal(carName);
+        }
+
+        /* Loan Calculator Logic */
+        function calculateLoan() {
+            const price = parseFloat(document.getElementById('calc-car-price').value) || 0;
+            const downPct = parseFloat(document.getElementById('calc-downpayment-pct').value) || 30;
+            const years = parseInt(document.getElementById('calc-years').value) || 5;
+
+            const downPayment = price * (downPct / 100);
+            const loanAmount = price - downPayment;
+            const months = years * 12;
+            const annualInterest = 0.085; // 8.5% trung bình
+            const monthlyInterestRate = annualInterest / 12;
+
+            // Simple EMI calculation
+            const monthlyPrincipal = loanAmount / months;
+            const monthlyInterest = loanAmount * monthlyInterestRate;
+            const totalMonthly = monthlyPrincipal + monthlyInterest;
+
+            document.getElementById('res-downpayment').innerText = downPayment.toLocaleString('vi-VN') + ' VNĐ';
+            document.getElementById('res-monthly').innerText = Math.round(totalMonthly).toLocaleString('vi-VN') + ' VNĐ';
+        }
+
+        /* Form Submission Toast Handler */
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast("Đăng Ký Lái Thử Thành Công!", "Chuyên viên Aura Motors sẽ liên hệ xác nhận lịch trong vòng 15 phút.");
+            e.target.reset();
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-message').innerText = message;
+
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 5000);
+        }
+
+        /* Window Load Initialization */
+        window.onload = function() {
+            renderCars();
+            calculateLoan();
+        };
+    </script>
+</body>
+</html>
